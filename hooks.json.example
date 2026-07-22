@@ -3,22 +3,22 @@
   "hooks": {
     "stop": [
       {
-        "command": "./hooks/mx-master-haptic/haptic.sh completed"
+        "command": "node ./hooks/mx-master-haptic/haptic.js completed"
       }
     ],
     "afterAgentResponse": [
       {
-        "command": "./hooks/mx-master-haptic/haptic.sh knock"
+        "command": "node ./hooks/mx-master-haptic/haptic.js knock"
       }
     ],
     "postToolUseFailure": [
       {
-        "command": "./hooks/mx-master-haptic/haptic.sh angry_alert"
+        "command": "node ./hooks/mx-master-haptic/haptic.js angry_alert"
       }
     ],
     "subagentStop": [
       {
-        "command": "./hooks/mx-master-haptic/haptic.sh sharp_state_change"
+        "command": "node ./hooks/mx-master-haptic/haptic.js sharp_state_change"
       }
     ]
   }

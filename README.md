@@ -18,6 +18,7 @@
 2. [Logi Options+](https://www.logitech.com/software/logi-options-plus.html) running
 3. The [Haptic Web](https://marketplace.logi.com/plugin/HapticWeb/en) plugin installed in Options+
 4. Cursor with hooks enabled
+5. Node.js 18+ (you already have it if you use `npx`)
 
 Quick check that HapticWeb is up:
 
@@ -47,7 +48,6 @@ npx cursor-hook install /path/to/Cursor-Haptic
 ```bash
 mkdir -p ~/.cursor/hooks
 cp -R hooks/mx-master-haptic ~/.cursor/hooks/
-chmod +x ~/.cursor/hooks/mx-master-haptic/haptic.sh
 ```
 
 Then copy the bits from [`hooks.json.example`](./hooks.json.example) into `~/.cursor/hooks.json`. Keep `"version": 1`.
@@ -72,7 +72,7 @@ export HAPTIC_WEB_URL=https://local.jmw.nz:41443
 ## Test
 
 ```bash
-echo '{}' | ~/.cursor/hooks/mx-master-haptic/haptic.sh completed
+echo '{}' | node ~/.cursor/hooks/mx-master-haptic/haptic.js completed
 ```
 
 Or just chat in Cursor. When the agent finishes, you should feel it.
@@ -91,7 +91,7 @@ rm -rf ~/.cursor/hooks/mx-master-haptic
 ```
 agent event (stop, afterAgentResponse, ...)
         ↓
-hook runs haptic.sh
+hook runs node haptic.js
         ↓
 POST https://local.jmw.nz:41443/haptic/{waveform}
         ↓

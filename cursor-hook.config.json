@@ -1,5 +1,4 @@
 {
-  "installCommand": "chmod +x haptic.sh",
   "files": {
     "hooks": [
       "hooks/mx-master-haptic"
@@ -8,22 +7,22 @@
   "hooks": {
     "stop": [
       {
-        "command": "./haptic.sh completed"
+        "command": "node ./haptic.js completed"
       }
     ],
     "afterAgentResponse": [
       {
-        "command": "./haptic.sh knock"
+        "command": "node ./haptic.js knock"
       }
     ],
     "postToolUseFailure": [
       {
-        "command": "./haptic.sh angry_alert"
+        "command": "node ./haptic.js angry_alert"
       }
     ],
     "subagentStop": [
       {
-        "command": "./haptic.sh sharp_state_change"
+        "command": "node ./haptic.js sharp_state_change"
       }
     ]
   }
