@@ -31,7 +31,7 @@ Second one should make the mouse buzz.
 ## Install
 
 ```bash
-npx cursor-hook install <your-github-user>/Cursor-Haptic
+npx cursor-hook install kevinrodriguez-io/Cursor-Haptic
 ```
 
 Pick **global** (`~/.cursor`) if you want it everywhere.
