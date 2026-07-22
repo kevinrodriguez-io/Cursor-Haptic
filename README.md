@@ -1,8 +1,20 @@
-# Cursor × MX Master 4 Haptics
+<p align="center">
+  <img src="assets/cursor.png" alt="Cursor" width="72" height="72" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/logi-options-plus.png" alt="Logi Options+" width="72" height="72" />
+</p>
 
-Feel Cursor agent events on your **Logitech MX Master 4** via [HapticWeb](https://haptics.jmw.nz/) and Cursor [hooks](https://cursor.com/docs/hooks).
+<h1 align="center">Cursor × MX Master 4 Haptics</h1>
 
-No Cursor extension required — just hooks + Options+.
+<p align="center">
+  Feel Cursor agent events on your <strong>Logitech MX Master 4</strong> via
+  <a href="https://haptics.jmw.nz/">HapticWeb</a> and Cursor
+  <a href="https://cursor.com/docs/hooks">hooks</a>.
+</p>
+
+<p align="center">
+  No Cursor extension required — just hooks + Options+.
+</p>
 
 ## Prerequisites
 
