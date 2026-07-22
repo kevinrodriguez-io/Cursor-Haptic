@@ -7,46 +7,42 @@
 <h1 align="center">Cursor × MX Master 4 Haptics</h1>
 
 <p align="center">
-  Feel Cursor agent events on your <strong>Logitech MX Master 4</strong> via
-  <a href="https://haptics.jmw.nz/">HapticWeb</a> and Cursor
-  <a href="https://cursor.com/docs/hooks">hooks</a>.
+  Buzzes your <strong>MX Master 4</strong> when the Cursor agent does stuff.
+  Uses <a href="https://cursor.com/docs/hooks">hooks</a> +
+  <a href="https://haptics.jmw.nz/">HapticWeb</a>. No Cursor extension.
 </p>
 
-<p align="center">
-  No Cursor extension required — just hooks + Options+.
-</p>
+## You need
 
-## Prerequisites
+1. An [MX Master 4](https://www.logitech.com/)
+2. [Logi Options+](https://www.logitech.com/software/logi-options-plus.html) running
+3. The [Haptic Web](https://marketplace.logi.com/plugin/HapticWeb/en) plugin installed in Options+
+4. Cursor with hooks enabled
 
-1. [MX Master 4](https://www.logitech.com/) (Windows or Mac)
-2. [Logi Options+](https://www.logitech.com/software/logi-options-plus.html) installed and running
-3. [Haptic Web Plugin](https://marketplace.logi.com/plugin/HapticWeb/en) installed in Options+
-4. Cursor IDE with hooks enabled
-
-Verify the bridge:
+Quick check that HapticWeb is up:
 
 ```bash
 curl -sS https://local.jmw.nz:41443/
 curl -sS -X POST -d '' https://local.jmw.nz:41443/haptic/completed
 ```
 
-You should feel a buzz on the second command.
+Second one should make the mouse buzz.
 
-## Install (recommended)
+## Install
 
 ```bash
 npx cursor-hook install <your-github-user>/Cursor-Haptic
 ```
 
-Choose **global** (`~/.cursor`) so it works in every project.
+Pick **global** (`~/.cursor`) if you want it everywhere.
 
-Or install from a local clone:
+From a local clone:
 
 ```bash
 npx cursor-hook install /path/to/Cursor-Haptic
 ```
 
-## Manual install
+### Manual
 
 ```bash
 mkdir -p ~/.cursor/hooks
@@ -54,23 +50,22 @@ cp -R hooks/mx-master-haptic ~/.cursor/hooks/
 chmod +x ~/.cursor/hooks/mx-master-haptic/haptic.sh
 ```
 
-Merge the entries from [`hooks.json.example`](./hooks.json.example) into `~/.cursor/hooks.json` (keep `"version": 1`).
+Then copy the bits from [`hooks.json.example`](./hooks.json.example) into `~/.cursor/hooks.json`. Keep `"version": 1`.
 
-## Default mapping
+## What fires what
 
-| Cursor hook | Waveform | Feel |
-|-------------|----------|------|
-| `stop` | `completed` | Agent turn finished |
-| `afterAgentResponse` | `knock` | Reply landed |
-| `postToolUseFailure` | `angry_alert` | Tool failed |
-| `subagentStop` | `sharp_state_change` | Subagent done |
+| Hook | Waveform | When |
+|------|----------|------|
+| `stop` | `completed` | Agent turn is done |
+| `afterAgentResponse` | `knock` | A reply lands |
+| `postToolUseFailure` | `angry_alert` | A tool blows up |
+| `subagentStop` | `sharp_state_change` | Subagent finishes |
 
-Edit waveforms in `cursor-hook.config.json` (or your installed `hooks.json`) using any [HapticWeb waveform](https://haptics.jmw.nz/integrate).
+Swap waveforms in `cursor-hook.config.json` (or your installed `hooks.json`). List is [here](https://haptics.jmw.nz/integrate).
 
-## Optional config
+## Optional
 
 ```bash
-# Custom HapticWeb base URL (default shown)
 export HAPTIC_WEB_URL=https://local.jmw.nz:41443
 ```
 
@@ -80,27 +75,29 @@ export HAPTIC_WEB_URL=https://local.jmw.nz:41443
 echo '{}' | ~/.cursor/hooks/mx-master-haptic/haptic.sh completed
 ```
 
-Then ask Cursor anything — when the agent finishes, the mouse should buzz. Debug in **Customize → Hooks** (execution log) or **View → Output → Hooks**.
+Or just chat in Cursor. When the agent finishes, you should feel it.
+
+Stuck? Check **Customize → Hooks** or **View → Output → Hooks**.
 
 ## Uninstall
 
 ```bash
 rm -rf ~/.cursor/hooks/mx-master-haptic
-# Remove the haptic entries from ~/.cursor/hooks.json
+# also delete the haptic entries from ~/.cursor/hooks.json
 ```
 
 ## How it works
 
 ```
-Agent event (stop / afterAgentResponse / …)
+agent event (stop, afterAgentResponse, ...)
         ↓
-Cursor hook runs haptic.sh
+hook runs haptic.sh
         ↓
 POST https://local.jmw.nz:41443/haptic/{waveform}
         ↓
-HapticWeb (Logi Actions SDK plugin in Options+)
+HapticWeb (inside Options+)
         ↓
-MX Master 4 haptic motor
+MX Master 4 buzzes
 ```
 
 ## License
