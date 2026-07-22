@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "hooks": {
+    "stop": [
+      {
+        "command": "./hooks/mx-master-haptic/haptic.sh completed"
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "command": "./hooks/mx-master-haptic/haptic.sh knock"
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "command": "./hooks/mx-master-haptic/haptic.sh angry_alert"
+      }
+    ],
+    "subagentStop": [
+      {
+        "command": "./hooks/mx-master-haptic/haptic.sh sharp_state_change"
+      }
+    ]
+  }
+}
