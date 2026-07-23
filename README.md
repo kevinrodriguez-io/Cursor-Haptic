@@ -3,6 +3,8 @@
   &nbsp;&nbsp;
   <img src="assets/vscode.png" alt="VS Code" width="64" height="64" />
   &nbsp;&nbsp;
+  <img src="assets/copilot.png" alt="GitHub Copilot" width="64" height="64" />
+  &nbsp;&nbsp;
   <img src="assets/claude.png" alt="Claude" width="64" height="64" />
   &nbsp;&nbsp;
   <img src="assets/logi-options-plus.png" alt="Logi Options+" width="64" height="64" />
