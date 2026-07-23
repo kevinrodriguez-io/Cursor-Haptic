@@ -37,7 +37,7 @@ Second one should make the mouse buzz.
 ### Cursor
 
 ```bash
-npx cursor-hook install kevinrodriguez-io/Cursor-Haptic
+npx cursor-hook install kevinrodriguez-io/agentic-haptic
 ```
 
 Pick **global** (`~/.cursor`) if you want it everywhere.
@@ -45,7 +45,7 @@ Pick **global** (`~/.cursor`) if you want it everywhere.
 From a local clone:
 
 ```bash
-npx cursor-hook install /path/to/Cursor-Haptic
+npx cursor-hook install /path/to/agentic-haptic
 ```
 
 #### Manual (Cursor)
@@ -64,7 +64,7 @@ VS Code **agent plugins** (Copilot Chat agents + hooks), not a classic Marketpla
 1. Extensions view → search `@agentPlugins`, **or** Command Palette → **Chat: Plugins**
 2. Install from source / Git URL:
    ```
-   https://github.com/kevinrodriguez-io/Cursor-Haptic
+   https://github.com/kevinrodriguez-io/agentic-haptic
    ```
 3. Enable `mx-master-haptic` if needed
 4. Use an **agent** chat session
@@ -76,13 +76,13 @@ See [Agent plugins in VS Code](https://code.visualstudio.com/docs/copilot/custom
 Terminal Copilot agent (`copilot`), separate from the VS Code UI.
 
 ```bash
-copilot plugin install kevinrodriguez-io/Cursor-Haptic
+copilot plugin install kevinrodriguez-io/agentic-haptic
 ```
 
 Or from a local clone:
 
 ```bash
-copilot plugin install /path/to/Cursor-Haptic
+copilot plugin install /path/to/agentic-haptic
 # re-run after changes; the CLI caches plugins
 ```
 
@@ -91,19 +91,19 @@ Check: `copilot plugin list`
 ### Claude Code
 
 ```bash
-claude plugin marketplace add kevinrodriguez-io/Cursor-Haptic
+claude plugin marketplace add kevinrodriguez-io/agentic-haptic
 claude plugin install mx-master-haptic@mx-master-haptic
 ```
 
 Try it for one session without installing:
 
 ```bash
-claude --plugin-dir /path/to/Cursor-Haptic
+claude --plugin-dir /path/to/agentic-haptic
 ```
 
 #### Manual (Claude Code)
 
-Merge [`examples/claude-settings.json`](./examples/claude-settings.json) into `~/.claude/settings.json` (or project `.claude/settings.json`). Replace `/ABSOLUTE/PATH/TO/Cursor-Haptic` with your clone path.
+Merge [`examples/claude-settings.json`](./examples/claude-settings.json) into `~/.claude/settings.json` (or project `.claude/settings.json`). Replace `/ABSOLUTE/PATH/TO/agentic-haptic` with your clone path.
 
 ## What fires what
 
