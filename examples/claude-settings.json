@@ -1,0 +1,49 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "/ABSOLUTE/PATH/TO/Cursor-Haptic/scripts/run-haptic.js",
+              "completed"
+            ],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "/ABSOLUTE/PATH/TO/Cursor-Haptic/scripts/run-haptic.js",
+              "angry_alert"
+            ],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "/ABSOLUTE/PATH/TO/Cursor-Haptic/scripts/run-haptic.js",
+              "sharp_state_change"
+            ],
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

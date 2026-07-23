@@ -1,0 +1,20 @@
+{
+  "name": "mx-master-haptic",
+  "displayName": "MX Master 4 Haptics",
+  "description": "Buzz your Logitech MX Master 4 when Claude Code finishes a turn (via HapticWeb in Logi Options+).",
+  "version": "1.2.0",
+  "author": {
+    "name": "Kevin Rodríguez",
+    "url": "https://github.com/kevinrodriguez-io"
+  },
+  "homepage": "https://github.com/kevinrodriguez-io/Cursor-Haptic",
+  "repository": "https://github.com/kevinrodriguez-io/Cursor-Haptic",
+  "license": "MIT",
+  "keywords": [
+    "haptics",
+    "mx-master",
+    "logitech",
+    "hooks",
+    "options-plus"
+  ]
+}

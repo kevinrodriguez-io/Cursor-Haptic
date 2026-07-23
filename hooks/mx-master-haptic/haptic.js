@@ -4,7 +4,7 @@
 /**
  * Fire MX Master 4 haptics via HapticWeb (Logi Options+ plugin).
  * Usage: node haptic.js <waveform>
- * Drains stdin so Cursor hooks don't block on unread JSON.
+ * Drains stdin so agent hooks don't block on unread JSON.
  */
 
 async function drainStdin() {
@@ -14,10 +14,7 @@ async function drainStdin() {
   }
 }
 
-async function main() {
-  await drainStdin();
-
-  const waveform = process.argv[2] || "completed";
+async function buzz(waveform = "completed") {
   const base = process.env.HAPTIC_WEB_URL || "https://local.jmw.nz:41443";
   const url = `${base.replace(/\/$/, "")}/haptic/${encodeURIComponent(waveform)}`;
 
@@ -32,4 +29,13 @@ async function main() {
   }
 }
 
-main().finally(() => process.exit(0));
+async function main() {
+  await drainStdin();
+  await buzz(process.argv[2] || "completed");
+}
+
+if (require.main === module) {
+  main().finally(() => process.exit(0));
+}
+
+module.exports = { buzz, drainStdin };

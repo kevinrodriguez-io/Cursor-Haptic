@@ -1,0 +1,22 @@
+{
+  "name": "mx-master-haptic",
+  "owner": {
+    "name": "Kevin Rodríguez",
+    "url": "https://github.com/kevinrodriguez-io"
+  },
+  "metadata": {
+    "description": "Haptic feedback for Logitech MX Master 4 via Logi Options+ HapticWeb"
+  },
+  "plugins": [
+    {
+      "name": "mx-master-haptic",
+      "source": "./",
+      "description": "Buzz your MX Master 4 when the agent finishes a turn",
+      "version": "1.2.0",
+      "author": {
+        "name": "Kevin Rodríguez",
+        "url": "https://github.com/kevinrodriguez-io"
+      }
+    }
+  ]
+}
